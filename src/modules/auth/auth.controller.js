@@ -14,7 +14,7 @@ export const register = async (req, res) => {
 
     const user = await User.create({ name, email, password: hashedPassword });
 
-    res.status(201).json({ message: 'Register Success ✅', user });
+    res.status(201).json({ message: 'Register Success', user });
 };
 
 export const login = async (req, res) => {
@@ -36,5 +36,5 @@ export const login = async (req, res) => {
         { expiresIn: '7d' }
     );
 
-    res.status(200).json({ message: 'Login Success ✅', token });
+    res.status(200).json({ message: 'Login Success', token });
 };
