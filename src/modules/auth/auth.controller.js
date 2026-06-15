@@ -1,8 +1,9 @@
 import User from './auth.model.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import asyncHandler from '../../utils/asyncHandler.js';
 
-export const register = async (req, res) => {
+export const register = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
 
     const existingUser = await User.findOne({ email });
@@ -15,9 +16,9 @@ export const register = async (req, res) => {
     const user = await User.create({ name, email, password: hashedPassword });
 
     res.status(201).json({ message: 'Register Success', user });
-};
+});
 
-export const login = async (req, res) => {
+export const login = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
@@ -37,4 +38,4 @@ export const login = async (req, res) => {
     );
 
     res.status(200).json({ message: 'Login Success', token });
-};
+});
