@@ -5,7 +5,7 @@ import authRouter from './src/modules/auth/auth.router.js';
 import errorHandler from './src/middleware/errorHandler.js';
 import categoryRouter from './src/modules/category/category.router.js';
 import subCategoryRouter from './src/modules/subcategory/subcategory.router.js';
-
+import brandRouter from './src/modules/brand/brand.router.js';
 
 const app = express();
 
@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/categories', categoryRouter);
 app.use('/api/subcategories', subCategoryRouter);
+app.use('/api/brands', brandRouter);
 
 
 app.use(errorHandler);
