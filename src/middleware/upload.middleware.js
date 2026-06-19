@@ -2,7 +2,7 @@ import multer from 'multer';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
 import cloudinary from '../config/cloudinary.js';
 
-// ── Category ──────────────────────────────────────────
+//Category 
 const categoryStorage = new CloudinaryStorage({
     cloudinary,
     params: {
@@ -11,7 +11,7 @@ const categoryStorage = new CloudinaryStorage({
     },
 });
 
-// ── Brand ─────────────────────────────────────────────
+// Brand
 const brandStorage = new CloudinaryStorage({
     cloudinary,
     params: {
@@ -20,7 +20,7 @@ const brandStorage = new CloudinaryStorage({
     },
 });
 
-// ── Product ───────────────────────────────────────────
+//Product
 const productStorage = new CloudinaryStorage({
     cloudinary,
     params: {
@@ -29,7 +29,7 @@ const productStorage = new CloudinaryStorage({
     },
 });
 
-// ── Exportد ───────────────────────────────────────────
+// Export
 export const uploadCategoryImage = multer({ storage: categoryStorage }).single('image');
 export const uploadBrandImage = multer({ storage: brandStorage }).single('image');
 export const uploadProductImages = multer({ storage: productStorage }).fields([
