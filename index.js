@@ -8,6 +8,7 @@ import subCategoryRouter from './src/modules/subcategory/subcategory.router.js';
 import brandRouter from './src/modules/brand/brand.router.js';
 import productRouter from './src/modules/product/product.router.js';
 import reviewRouter from './src/modules/review/review.router.js';
+import favouriteRouter from './src/modules/favourite/favourite.router.js';
 
 
 
@@ -27,6 +28,7 @@ app.use('/api/subcategories', subCategoryRouter);
 app.use('/api/brands', brandRouter);
 app.use('/api/products', productRouter);
 app.use('/api/reviews', reviewRouter);
+app.use('/api/favourites', favouriteRouter);
 
 
 app.use(errorHandler);
