@@ -32,7 +32,8 @@ const productStorage = new CloudinaryStorage({
 // Export
 export const uploadCategoryImage = multer({ storage: categoryStorage }).single('image');
 export const uploadBrandImage = multer({ storage: brandStorage }).single('image');
+
 export const uploadProductImages = multer({ storage: productStorage }).fields([
-    { name: 'imageCover', maxCount: 1 },
-    { name: 'images', maxCount: 10 },
+    { name: 'imageCover', maxCount: 1 }, 
+    { name: 'images', maxCount: 10 },    
 ]);
