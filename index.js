@@ -10,7 +10,7 @@ import productRouter from './src/modules/product/product.router.js';
 import reviewRouter from './src/modules/review/review.router.js';
 import favouriteRouter from './src/modules/favourite/favourite.router.js';
 import cartRouter from './src/modules/cart/cart.router.js';
-
+import couponRouter from './src/modules/coupon/coupon.router.js';
 
 const app = express();
 
@@ -30,6 +30,8 @@ app.use('/api/products', productRouter);
 app.use('/api/reviews', reviewRouter);
 app.use('/api/favourites', favouriteRouter);
 app.use('/api/cart', cartRouter);
+app.use('/api/coupons', couponRouter);
+
 
 
 app.use(errorHandler);
